@@ -79,20 +79,31 @@
 											<label for="email">Email</label>
 											<input type="text" name="email" id="email" />
 										</div>
+
+
 										<div class="field half">
 											<label for="pass">Password</label>
 											<input type="text" name="pass" id="pass" />
+											<input id="verify"  type="button" value="Verify" class="primary" />
 										</div>
+
 										<div class="field">
+										Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+										</div>
+
+
+
+										<div class="field" id="messagebox">
 											<label for="message">Message</label>
 											<textarea name="message" id="message" rows="4"></textarea>
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input id="submit" onclick="submitData()" type="button" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-										<li>Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span></li>
+										<li><input id="submit" type="button" value="Send Message" class="primary" /></li>
+										<li><input id="reset" type="reset" value="Reset" /></li>
+
 									</ul>
+
 								</form>
 								<!--
 								<ul class="icons">
@@ -336,12 +347,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 												<label for="demo-message">Message</label>
 												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
 											</div>
-										</div>
-										<ul class="actions">
+
+											<ul class="actions">
 											<li><input type="submit" value="Send Message" class="primary" /></li>
 											<li><input type="reset" value="Reset" /></li>
-
-										</ul>
+											</ul>
+											</div>
 
 
 
