@@ -1,4 +1,4 @@
-console.log("strona zaladowana");
+
 if (firebase.auth().currentUser) {
 
         firebase.auth().signOut();
@@ -24,7 +24,7 @@ function initApp() {
       firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                   document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-                  console.log(user);
+
                   messagebox.style.display='block';
                   submit.style.display='block';
                   reset.style.display='block';
@@ -66,57 +66,17 @@ submit.addEventListener('click', e=>{
     author: name.value,
     text: message.value
     };
-    console.log(name.value);
-    console.log(email.value);
-    console.log(message.value);
-
           // [END_EXCLUDE]
       dbRefObject.child(email.value).set(postData).catch(function(error) {
               // Handle Errors here.
               var errorCode = error.code;
               var errormessagebox = error.messagebox;
               // [START_EXCLUDE]
-              if (errorCode === 'auth/wrong-password') {
-                alert('Wrong password.');
-              } else {
-                alert(errormessagebox);
-              }
+              alert(errormessagebox);
+
               console.log(error);
 
               // [END_EXCLUDE]
             });
       alert('Your data was added');
     });
-/*
-function submitData(){
-  firebase.auth().signOut();
-  var pass = document.getElementById('pass');
-  console.log(pass.value);
-  firebase.auth().signInWithEmailAndPassword('sobus.jan@gmail.com', pass.value).catch(function(error) {
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errormessagebox = error.messagebox;
-          // [START_EXCLUDE]
-          if (errorCode === 'auth/wrong-password') {
-            alert('Wrong password.');
-          } else {
-            alert(errormessagebox);
-          }
-          console.log(error);
-
-          // [END_EXCLUDE]
-        });
-
-        var postData = {
-          author: name.value,
-          text: messagebox.value
-        };
-        if (firebase.auth().currentUser) {
-            dbRefObject.child(email.value).set(postData);
-
-            // [END signout]
-          }
-
-    firebase.auth().signOut();
-}
-*/
