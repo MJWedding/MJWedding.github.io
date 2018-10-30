@@ -87,10 +87,35 @@
 											<input id="verify"  type="button" value="Verify" class="primary" />
 										</div>
 
-										<div class="field">
+										<!--<div class="field">
 										Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+										</div>-->
+										<div class="field" id='adults_field'>
+											<label for="number_adults">Number of people over 8 years old:</label>
+											<select name="number_adults" id="number_adults">
+												<option value="0">Just Me</option>
+												<option value="1">Me + Partner</option>
+												<option value="2">2+1</option>
+												<option value="3">2+2</option>
+												<option value="4">2+3</option>
+											</select>
 										</div>
+										<div class="field half">
 
+											<input type="text" name="adult" id="adult1" placeholder="Partner name" />
+										</div>
+										<div class="field half">
+
+											<input type="text" name="adult" id="adult2" placeholder="Child 1 name" />
+										</div>
+										<div class="field half">
+
+											<input type="text" name="adult" id="adult3" placeholder="Child 2 name" />
+										</div>
+										<div class="field half">
+
+											<input type="text" name="adult" id="adult4" placeholder="Child 3 name" />
+										</div>
 
 
 										<div class="field" id="messagebox">

@@ -13,28 +13,59 @@ const bottom = document.getElementById('bottom');
 const verify = document.getElementById('verify');
 const reset = document.getElementById('reset');
 const message = document.getElementById('message');
+const adults_field = document.getElementById('adults_field');
+const number_adults = document.getElementById('number_adults');
+const adults_names = document.getElementsByName('adult');
+console.log(adults_names);
+
 
 messagebox.style.display='none';
 submit.style.display='none';
 reset.style.display='none';
+adults_field.style.display='none';
+
+for (var i = 0; i < adults_names.length; ++i)
+    {
+
+            adults_names[i].style.display = 'none';
+
+    }
 
 function initApp() {
       // Listening for auth state changes.
       // [START authstatelistener]
       firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
-                  document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+                //  document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
 
                   messagebox.style.display='block';
                   submit.style.display='block';
                   reset.style.display='block';
+                  adults_field.style.display='block';
+
                 } else {
-                  document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+                //  document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
                   messagebox.style.display='none';
                   submit.style.display='none';
                   reset.style.display='none';
+                  adults_field.style.display='none';
+
                 }
               });
+}
+
+number_adults.onchange = function() {
+console.log(number_adults.value);
+    for (var i = 0; i < adults_names.length; ++i)
+    {
+        if(i < number_adults.value){
+            adults_names[i].style.display = 'inline';
+            console.log('changed');
+        } else {
+            adults_names[i].style.display = 'none';
+        }
+    }
+
 }
 window.onload = function() {
       initApp();
