@@ -55,12 +55,12 @@ function initApp() {
 }
 
 number_adults.onchange = function() {
-console.log(number_adults.value);
+
     for (var i = 0; i < adults_names.length; ++i)
     {
         if(i < number_adults.value){
             adults_names[i].style.display = 'inline';
-            console.log('changed');
+
         } else {
             adults_names[i].style.display = 'none';
         }
