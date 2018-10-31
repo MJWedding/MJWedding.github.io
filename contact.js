@@ -23,6 +23,9 @@ const infants_field = document.getElementById('infants_field');
 const number_infants = document.getElementById('number_infants');
 const infants_names = document.getElementsByName('infant');
 const after_field = document.getElementById('after_field');
+const after_stay = document.getElementById('after_stay');
+const after_transport = document.getElementById('after_transport');
+const after_self = document.getElementById('after_self');
 const transport_in = document.getElementById('transport_in');
 const transport_field = document.getElementById('transport_field');
 
@@ -96,7 +99,7 @@ number_adults.onchange = function() {
         }
     }
 
-}
+};
 
 number_kids.onchange = function() {
 
@@ -110,7 +113,7 @@ number_kids.onchange = function() {
         }
     }
 
-}
+};
 number_infants.onchange = function() {
 
     for (var i = 0; i < infants_names.length; ++i)
@@ -123,7 +126,8 @@ number_infants.onchange = function() {
         }
     }
 
-}
+};
+
 window.onload = function() {
       initApp();
     };
@@ -154,10 +158,29 @@ verify.addEventListener('click', e=>{
 submit.addEventListener('click', e=>{
   var postData = {
     author: name.value,
-    text: message.value
+    message: message.value,
+    email:email.value,
+    adults:Number(number_adults.value)+1,
+    kids:Number(number_kids.value),
+    infants:Number(number_infants.value),
+    transport_in:transport_in.checked,
+    after_stay:after_stay.checked,
+    after_self:after_self.checked,
+    after_transport:after_transport.checked
     };
+    for (var i=1;i<=number_adults.value;i++){
+      var j=i+1;
+      postData['adult'+j]=document.getElementById('adult'+i).value;
+    }
+    for (var i=1;i<=number_kids.value;i++){
+      postData['kid'+i]=document.getElementById('kid'+i).value;
+    }
+    for (var i=1;i<=number_infants.value;i++){
+      postData['infant'+i]=document.getElementById('infant'+i).value;
+    }
+    console.log(postData);
           // [END_EXCLUDE]
-      dbRefObject.child(email.value).set(postData).catch(function(error) {
+      dbRefObject.child(name.value).set(postData).catch(function(error) {
               // Handle Errors here.
               var errorCode = error.code;
               var errormessagebox = error.messagebox;
