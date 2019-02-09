@@ -28,6 +28,10 @@ const after_transport = document.getElementById('after_transport');
 const after_self = document.getElementById('after_self');
 const transport_in = document.getElementById('transport_in');
 const transport_field = document.getElementById('transport_field');
+const diet_field = document.getElementById('diet_field');
+const diet = document.getElementById('diet');
+const friday_field = document.getElementById('friday_field');
+const friday = document.getElementById('friday');
 
 
 
@@ -40,6 +44,8 @@ kids_field.style.display='none';
 infants_field.style.display='none';
 after_field.style.display='none';
 transport_field.style.display='none';
+friday_field.style.display='none';
+diet_field.style.display='none';
 
 for (var i = 0; i < adults_names.length; ++i)
     {
@@ -70,6 +76,8 @@ function initApp() {
                   infants_field.style.display='block';
                   after_field.style.display='block';
                   transport_field.style.display='block';
+                  friday_field.style.display='block';
+                  diet_field.style.display='block';
 
                 } else {
                 //  document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
@@ -81,6 +89,8 @@ function initApp() {
                   infants_field.style.display='none';
                   after_field.style.display='none';
                   transport_field.style.display='none';
+                  friday_field.style.display='none';
+                  diet_field.style.display='none';
 
                 }
               });
@@ -166,7 +176,9 @@ submit.addEventListener('click', e=>{
     transport_in:transport_in.checked,
     after_stay:after_stay.checked,
     after_self:after_self.checked,
-    after_transport:after_transport.checked
+    after_transport:after_transport.checked,
+    diet:diet.checked,
+    friday:friday.checked
     };
     for (var i=1;i<=number_adults.value;i++){
       var j=i+1;

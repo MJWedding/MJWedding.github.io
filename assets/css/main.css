@@ -1249,16 +1249,7 @@ input, select, textarea {
 			margin-top: 3.5rem;
 		}
 
-			#header > *:before {
-				content: '';
-				display: block;
-				position: absolute;
-				top: calc(-3.5rem - 1px);
-				left: calc(50% - 1px);
-				width: 1px;
-				height: calc(3.5rem + 1px);
-				background: #ffffff;
-			}
+
 
 		#header > :first-child {
 			margin-top: 0;
@@ -1286,6 +1277,16 @@ input, select, textarea {
 			border-top-width: 1px;
 			border-bottom-width: 1px;
 			max-width: 100%;
+		}
+		#header .content:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: calc(-3.5rem - 1px);
+			left: calc(50% - 1px);
+			width: 1px;
+			height: calc(3.5rem + 1px);
+			background: #ffffff;
 		}
 
 			#header .content .inner {
