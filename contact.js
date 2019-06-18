@@ -205,3 +205,12 @@ submit.addEventListener('click', e=>{
             });
       alert('Your data was added');
     });
+//popup Window
+
+function swipe() {
+   var largeImage = document.getElementById('map');
+   largeImage.style.display = 'block';
+  
+   var url=largeImage.getAttribute('src');
+   window.open(url,'Image','width=largeImage.stylewidth,height=largeImage.style.height,resizable=1');
+}
