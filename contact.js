@@ -207,10 +207,10 @@ submit.addEventListener('click', e=>{
     });
 //popup Window
 
-function swipe() {
-   var largeImage = document.getElementById('map');
+function swipe(x) {
+   var largeImage = document.getElementById(x);
    largeImage.style.display = 'block';
-  
+
    var url=largeImage.getAttribute('src');
    window.open(url,'Image','width=largeImage.stylewidth,height=largeImage.style.height,resizable=1');
 }
